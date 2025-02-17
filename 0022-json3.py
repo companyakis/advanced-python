@@ -1,13 +1,21 @@
+# serialize => to file/ json
+
 import json
 
-salary_data_usd = '{"ayhan": 4000, "hakan": 1500, "bilge": 3200}'
+emp_data = {
+    "name": "Ayhan Kutlu",
+    "title": "senior expert",
+    "id": "4296",
+    "department": "sales",
+    "salary_USD" : 4200
+}
 
-new_salary_data_usd = json.loads(salary_data_usd, parse_int = int) # if float, use float
+print(type(emp_data)) # <class 'dict'>
 
-for key, value in new_salary_data_usd.items():
-    print(f"Employee: {key.title()} and salary $: {value}")
+emp_data_json = json.dumps(emp_data)
+
+print(type(emp_data_json)) # <class 'str'>
+
+print(emp_data_json[:10]) # {"name": " => why? because string data!
 
 
-# Employee: Ayhan and salary $: 4000
-# Employee: Hakan and salary $: 1500
-# Employee: Bilge and salary $: 3200

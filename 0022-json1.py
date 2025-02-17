@@ -1,18 +1,13 @@
+# deserializing
+
 import json
 
-customer_data = '{"city": "Ankara", "customer": "ayhan bilir", "idx": "2014"}'
-
-print(type(customer_data)) # <class 'str'>
-
-new_customer_data = json.loads(customer_data)
-
-print(type(new_customer_data)) # dict
-
-for key, value in new_customer_data.items():
-    print(f"{key} -> {value}")
+with open("employee.json") as file:
+    data = json.load(file)
     
-"""
-city -> Ankara
-customer -> ayhan bilir
-idx -> 2014
-"""
+    
+print(type(data)) # <class 'dict'>
+
+print(data.keys()) # dict_keys(['name', 'title', 'id', 'department', 'salary_USD'])
+
+print(f"Employee: {data["name"]} and salary: {data["salary_USD"]}") # Employee: Ayhan Kutlu and salary: 4200

@@ -1,26 +1,20 @@
 import json
 
-customer_data = '{"city": "Ankara", "customer": "ayhan bilir", "idx": "2014"}'
+emp_data = """
 
-print(type(customer_data)) # <class 'str'>
+{
+    "name": "Ayhan Kutlu",
+    "title": "senior expert",
+    "id": "4296",
+    "department": "sales",
+    "salary_USD" : 4200
+}
 
-# we can change data type
-# use object hook, but only keys are here!
+"""
 
-new_customer_data1= json.loads(customer_data, object_hook = list)
+emp_data = json.loads(emp_data)
+    
 
-print(type(new_customer_data1)) # <class 'list'>
+print(emp_data.keys()) # dict_keys(['name', 'title', 'id', 'department', 'salary_USD'])
 
-print(new_customer_data1) # ['city', 'customer', 'idx']
-
-# object_pairs_hook = list
-
-new_customer_data2 = json.loads(customer_data, object_pairs_hook = list, object_hook = list)
-
-print(type(new_customer_data2)) # <class 'dict'>
-
-print(new_customer_data2) # [('city', 'Ankara'), ('customer', 'ayhan bilir'), ('idx', '2014')]
-
-cus_idx = new_customer_data2[2][1]
-
-print(cus_idx) # 2014
+print(f"Employee: {emp_data["name"]} and salary: {emp_data["salary_USD"]}") # Employee: Ayhan Kutlu and salary: 4200

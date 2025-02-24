@@ -8,5 +8,6 @@ response = requests.post("https://jsonplaceholder.typicode.com/todos",
                         )
 result = response.json()
 
-print(result) # {'userId': '500', 'title': 'Mustafa was here', 'body': 'A rolling stone gathers no moss', 'id': 201}
+print(result) # {'userId': '500', 'title': 'Mustafa was here', 'body': 'A rolling stone gathers no moss', 'id': 201} .
+
 

@@ -1,3 +1,3 @@
  django-admin startapp products
 
- ![image](https://github.com/user-attachments/assets/26b79b7f-5405-4923-ac57-5187b61385bf)
+![image](https://github.com/user-attachments/assets/b6eccb35-6b49-4c3b-93f3-38c8b74b409a)
